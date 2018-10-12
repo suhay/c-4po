@@ -1,11 +1,4 @@
-[Settings]
-	ID = "project-boilerplate"
-
 [build]
-	command = "yarn build:gatsby"
-	publish = "public"
-	functions = "dist-functions"
-
-[[redirects]]
-	from = "/admin"
-	to = "/admin/"
+  command = "yarn build"
+  publish = "dist/client"
+  functions = "dist/server"
