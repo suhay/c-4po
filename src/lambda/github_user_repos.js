@@ -1,3 +1,5 @@
+const fetch = require('isomorphic-fetch')
+
 exports.handler = async (event, context) => {
  const params = JSON.parse(event.body)
  const user = params.queryResult.parameters.user || 'escaladesports'
