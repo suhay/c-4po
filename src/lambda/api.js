@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
   method: 'POST',
   body: params
  }).then(res => res.json())
-
+ console.log(Date.now(), `API CALLED`)
  return {
   statusCode: 200,
   body: res
