@@ -64,7 +64,8 @@
     ]
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "@google-cloud/pubsub": "^0.20.1"
   },
   "main": "dist/index.js",
   "devDependencies": {

@@ -1,68 +1,33 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import buttonStyles from '../styles/mixins/button'
-import Layout from '../components/layouts/default'
-import Modal from '../components/modal'
-import Carousel from '../components/carousel'
+import React from "react"
+
+// import PubSub from "@google-cloud/pubsub"
+
+// const projectId = `c-4po-219217`
 
 export default class HomePage extends React.Component {
-	constructor(props){
+	constructor(props) {
 		super(props)
 		this.state = {
-			open: false,
+			topic: ``,
 		}
-	}
-	render() {
-		const {
-			page: {
-				html,
-			},
-			site: {
-				siteMetadata: {
-					siteTitle,
-					siteDescription,
-				},
-			},
-		} = this.props.data
 
+		this.createTopic = this.createTopic.bind(this)
+	}
+
+	createTopic() {
+		console.log(this.state.topic)
+	}
+
+	render() {
 		return (
-			<Layout siteTitle={siteTitle} description={siteDescription}>
-				<div dangerouslySetInnerHTML={{ __html: html }} />
-				<Carousel width={1000} height={400}>
-					<img src={`http://placehold.it/1000x400/ccc/999/&text=slide1`} />
-					<img src={`http://placehold.it/1000x400/ccc/999/&text=slide2`} />
-					<img src={`http://placehold.it/1000x400/ccc/999/&text=slide3`} />
-				</Carousel>
-				<br />
-				<button
-					onClick={() => this.setState({ open: true })}
-					className={buttonStyles}
-				>
-					Open Modal
-				</button>
-				<Modal
-					open={this.state.open}
-					onClose={() => this.setState({ open: false })}
-				>
-					<div>Modal content</div>
-				</Modal>
-			</Layout>
+			<div>
+				<input
+					type="text"
+					value={this.state.topic}
+					onChange={e => this.setState({ topic: e.target.value })}
+				/>
+				<button onClick={() => this.createTopic()}>Create Topic</button>
+			</div>
 		)
 	}
 }
-
-export const query = graphql`
-	query HomePage {
-		page: markdownRemark(fileAbsolutePath: {
-			regex: "/src/markdown/index.md/"
-		}){
-			html
-		}
-		site{
-			siteMetadata{
-				siteTitle: title
-				siteDescription: description
-			}
-		}
-	}
-`
