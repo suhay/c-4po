@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
  const url = `https://c-4po.netlify.com/.netlify/functions/${func}`
  const res = await fetch(url, {
   method: 'POST',
-  body: event.body
+  body: params
  }).then(res => res.json())
 
  return {

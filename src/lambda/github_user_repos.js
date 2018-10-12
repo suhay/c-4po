@@ -1,7 +1,7 @@
 const fetch = require('isomorphic-fetch')
 
 exports.handler = async (event, context) => {
- const params = JSON.parse(event.body)
+ const params = event.body
  const user = params.queryResult.parameters.user || 'escaladesports'
  const url = `https://api.github.com/users/${user}/repos`
  const res = await fetch(url, {
