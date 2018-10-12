@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "querystring": "^0.2.0"
   }
 }
