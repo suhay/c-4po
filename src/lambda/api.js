@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
 	const params = event.body
-	const func = params.parameters.intent.displayName || 'hello_name'
 	console.log(params)
+	const func = params.parameters.intent.displayName || 'hello_name'
 	const url = `/.netlify/functions/${func}`
 	const res = await fetch(url, {
 	 method: 'POST',
