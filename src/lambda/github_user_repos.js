@@ -15,12 +15,7 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   messages: [
-    {
-     speech: `${user} has ${res.data.length} public repos`,
-     type: 0
-    }
-   ]
+   fulfillmentText: `${user} has ${res.data.length} public repos`
   })
  }
 }
