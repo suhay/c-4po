@@ -7,14 +7,14 @@ exports.handler = async (event, context) => {
  const url = `https://c-4po.netlify.com/.netlify/functions/${func}`
  console.log(`URL`, url)
 
- await axios({
+ const res = await axios({
   method: `post`,
   url,
   data: event.body
- })
+ }).data
 
  return {
   statusCode: 200,
-  body: `${func} invoked`
+  body: JSON.stringify(res)
  }
 }
