@@ -2,7 +2,7 @@ const fetch = require('isomorphic-fetch')
 const axios = require('axios')
 
 exports.handler = async (event, context) => {
- const params = event.body
+ const params = JSON.parse(event.body)
  const user = params.queryResult.parameters.user || 'escaladesports'
  const url = `https://api.github.com/users/tbaustin/${user}`
  const res = await axios({
