@@ -12,9 +12,8 @@ exports.handler = async (event, context) => {
    Accept: `application/vnd.github.v3+json`
   }
  })
-
  return {
   statusCode: 200,
-  body: JSON.stringify(res.data.length)
+  body: JSON.stringify(`${user} has ${res.data.length} public repos`)
  }
 }
