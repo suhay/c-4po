@@ -3,9 +3,8 @@ const axios = require('axios')
 
 exports.handler = async (event, context) => {
  const params = event.body
- console.log(params)
- // const user = params.queryResult.parameters.user || 'escaladesports'
- const url = `https://api.github.com/users/tbaustin/repos`
+ const user = params.queryResult.parameters.user || 'escaladesports'
+ const url = `https://api.github.com/users/tbaustin/${user}`
  const res = await axios({
   method: 'GET',
   url,
