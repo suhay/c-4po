@@ -13,9 +13,10 @@ exports.handler = async (event, context) => {
    Accept: `application/vnd.github.v3+json`
   }
  })
- console.log(res.length)
+
+ console.log(res.data.length)
  return {
   statusCode: 200,
-  body: JSON.stringify(res.length)
+  body: JSON.stringify(res.data.length)
  }
 }
