@@ -4,6 +4,7 @@ const axios = require('axios')
 exports.handler = async (event, context) => {
  const params = JSON.parse(event.body)
  const user = params.queryResult.parameters.user || 'escaladesports'
+ console.log(user)
  const url = `https://api.github.com/users/tbaustin/${user}`
  const res = await axios({
   method: 'GET',
