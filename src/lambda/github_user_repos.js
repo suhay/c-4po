@@ -12,8 +12,15 @@ exports.handler = async (event, context) => {
    Accept: `application/vnd.github.v3+json`
   }
  })
- console.log(res.headers)
- console.log(res.headers[`link`])
+
+ const links = res.headers[`link`]
+ const updatedLinks = link.replace(
+  /<([^>]*)>;\s*rel="([\w]*)"/g,
+  (m, uri, type) => {
+   links[type] = uri
+  }
+ )
+ console.log(updatedLinks)
  return {
   statusCode: 200,
   body: JSON.stringify({
