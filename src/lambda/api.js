@@ -1,4 +1,5 @@
 const fetch = require('isomorphic-fetch')
+const axios = require('axios')
 
 exports.handler = async (event, context) => {
  const params = JSON.parse(event.body)
@@ -6,10 +7,11 @@ exports.handler = async (event, context) => {
  const url = `https://c-4po.netlify.com/.netlify/functions/${func}`
  console.log(`URL`, url)
 
- const res = await fetch(url, {
-  method: 'POST',
-  body: event.body
- }).then(res => res.json())
+ const res = await axios({
+  method: `post`,
+  url,
+  data: event.body
+ })
 
  return {
   statusCode: 200,
