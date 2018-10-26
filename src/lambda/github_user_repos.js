@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
    Accept: `application/vnd.github.v3+json`
   }
  })
- console.log(Object.keys(res.headers))
+ console.log(Object.keys(res.headers[`link`]))
  return {
   statusCode: 200,
   body: JSON.stringify({
