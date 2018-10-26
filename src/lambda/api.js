@@ -11,13 +11,13 @@ exports.handler = async (event, context) => {
  console.log(event.body)
  console.log(`------------`)
  console.log(`------------`)
- const res = await fetch(url, {
-  method: 'POST',
-  body: params
- }).then(res => res.json())
+ // const res = await fetch(url, {
+ //  method: 'POST',
+ //  body: params
+ // }).then(res => res.json())
 
  return {
   statusCode: 200,
-  body: res
+  body: `Hello There`
  }
 }
