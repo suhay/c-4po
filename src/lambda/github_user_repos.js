@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   }
  })
 
- console.log(res.data.length)
+ console.log(res.data)
  return {
   statusCode: 200,
   body: JSON.stringify(res.data.length)
