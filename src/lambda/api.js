@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
   method: `post`,
   url,
   data: event.body
- }).data
+ })
  console.log(res)
  return {
   statusCode: 200,
