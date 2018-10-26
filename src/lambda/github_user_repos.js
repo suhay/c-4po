@@ -1,19 +1,21 @@
 const fetch = require('isomorphic-fetch')
+const axios = require('axios')
 
 exports.handler = async (event, context) => {
  const params = event.body
  console.log(params)
  // const user = params.queryResult.parameters.user || 'escaladesports'
  const url = `https://api.github.com/users/tbaustin/repos`
- const res = await fetch(url, {
+ const res = await axios({
   method: 'GET',
+  url,
   headers: {
    Accept: `application/vnd.github.v3+json`
   }
- }).then(res => res.json())
+ })
  console.log(res)
  return {
   statusCode: 200,
-  body: res.length
+  body: `Github user repos`
  }
 }
