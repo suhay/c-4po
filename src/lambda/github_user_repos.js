@@ -13,8 +13,9 @@ exports.handler = async (event, context) => {
   }
  })
 
- const links = res.headers[`link`]
- const updatedLinks = links.replace(
+ const link = res.headers[`link`]
+ const links = {}
+ const updatedLinks = link.replace(
   /<([^>]*)>;\s*rel="([\w]*)"/g,
   (m, uri, type) => {
    links[type] = uri
