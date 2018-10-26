@@ -1,12 +1,10 @@
 const fetch = require('isomorphic-fetch')
 
 exports.handler = async (event, context) => {
- console.log(Date().toString(), `API CALLED`)
  const params = JSON.parse(event.body)
  const func = params.queryResult.intent.displayName || 'hello_name'
- console.log(func)
- console.log(event.body)
  const url = `https://c-4po.netlify.com/.netlify/functions/${func}`
+ console.log(`URL`, url)
  const res = await fetch(url, {
   method: 'POST',
   body: event.body
