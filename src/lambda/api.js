@@ -2,6 +2,7 @@ const fetch = require('isomorphic-fetch')
 
 exports.handler = async (event, context) => {
  console.log(Date().toString(), `API CALLED`)
+ console.log(JSON.parse(event.body))
  const params = JSON.parse(event.body)
  const func = params.queryResult.intent.displayName || 'hello_name'
 
