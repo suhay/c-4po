@@ -5,9 +5,15 @@ exports.handler = async (event, context) => {
  const func = params.queryResult.intent.displayName || 'hello_name'
  const url = `https://c-4po.netlify.com/.netlify/functions/${func}`
  console.log(`URL`, url)
+
+ console.log(`------------`)
+ console.log(`------------`)
+ console.log(event.body)
+ console.log(`------------`)
+ console.log(`------------`)
  const res = await fetch(url, {
   method: 'POST',
-  body: event.body
+  body: params
  }).then(res => res.json())
 
  return {
