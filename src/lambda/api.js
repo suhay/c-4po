@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
 
  console.log(`------------`)
  console.log(`------------`)
- console.log(event.body)
+ console.log(params)
  console.log(`------------`)
  console.log(`------------`)
  // const res = await fetch(url, {
