@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
   url,
   data: event.body
  }).data
-
+ console.log(res)
  return {
   statusCode: 200,
   body: JSON.stringify(res)
