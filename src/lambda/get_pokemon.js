@@ -21,35 +21,40 @@ exports.handler = async (event, context) => {
      richResponse: {
       items: [
        {
-        carouselBrowse: {
-         items: [
-          {
-           description: 'Option One Description',
-           image: {
-            url: 'http://imageOneUrl.com',
-            accessibilityText: 'Image description for screen readers'
-           },
-           optionInfo: {
-            key: 'itemOne',
-            synonyms: ['thing one', 'object one']
-           },
-           title: 'Option One Title'
-          },
-          {
-           description: 'Option Two Description',
-           image: {
-            url: 'http://imageTwoUrl.com',
-            accessibilityText: 'Image description for screen readers'
-           },
-           optionInfo: {
-            key: 'itemTwo',
-            synonyms: ['thing two', 'object two']
-           },
-           title: 'Option Two Title'
-          }
-         ]
+        simpleResponse: {
+         textToSpeech: 'this is a simple response'
         }
        }
+       // {
+       //  carouselBrowse: {
+       //   items: [
+       //    {
+       //     description: 'Option One Description',
+       //     image: {
+       //      url: 'http://imageOneUrl.com',
+       //      accessibilityText: 'Image description for screen readers'
+       //     },
+       //     optionInfo: {
+       //      key: 'itemOne',
+       //      synonyms: ['thing one', 'object one']
+       //     },
+       //     title: 'Option One Title'
+       //    },
+       //    {
+       //     description: 'Option Two Description',
+       //     image: {
+       //      url: 'http://imageTwoUrl.com',
+       //      accessibilityText: 'Image description for screen readers'
+       //     },
+       //     optionInfo: {
+       //      key: 'itemTwo',
+       //      synonyms: ['thing two', 'object two']
+       //     },
+       //     title: 'Option Two Title'
+       //    }
+       //   ]
+       //  }
+       // }
       ]
      }
     }
