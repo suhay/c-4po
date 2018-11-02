@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
   url
  })
 
- console.log(Object.keys(res))
+ console.log(Object.keys(res.data))
  return {
   statusCode: 200,
   body: JSON.stringify({
