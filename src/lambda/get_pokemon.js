@@ -30,7 +30,9 @@ exports.handler = async (event, context) => {
      }
     },
     {
-     text: [`hello`]
+     image: {
+      imageUri: `https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png`
+     }
     }
    ]
   })
