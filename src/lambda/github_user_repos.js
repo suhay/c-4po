@@ -1,4 +1,3 @@
-const fetch = require('isomorphic-fetch')
 const axios = require('axios')
 
 exports.handler = async (event, context) => {
