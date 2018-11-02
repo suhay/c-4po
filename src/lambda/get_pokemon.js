@@ -13,6 +13,8 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
+   platform: 'google',
+   type: 'custom_payload',
    payload: {
     google: {
      expectUserResponse: true,
