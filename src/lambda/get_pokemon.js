@@ -13,70 +13,23 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   platform: 'google',
-   type: 'custom_payload',
-   payload: {
-    google: {
-     expectUserResponse: true,
-     richResponse: {
-      items: [
+   fulfillmentMessages: [
+    {
+     card: {
+      title: 'Stats for: ',
+      subtitle: res.data.name,
+      imageUri: res.data.sprites.front_default,
+      buttons: [
        {
-        simpleResponse: {
-         displayText: 'this is a simple response'
-        }
+        text: 'Check stats on Bulbapedia',
+        postback: `https://bulbapedia.bulbagarden.net/wiki/${
+         res.data.name
+        }_(Pok%C3%A9mon)`
        }
-       // {
-       //  carouselBrowse: {
-       //   items: [
-       //    {
-       //     description: 'Option One Description',
-       //     image: {
-       //      url: 'http://imageOneUrl.com',
-       //      accessibilityText: 'Image description for screen readers'
-       //     },
-       //     optionInfo: {
-       //      key: 'itemOne',
-       //      synonyms: ['thing one', 'object one']
-       //     },
-       //     title: 'Option One Title'
-       //    },
-       //    {
-       //     description: 'Option Two Description',
-       //     image: {
-       //      url: 'http://imageTwoUrl.com',
-       //      accessibilityText: 'Image description for screen readers'
-       //     },
-       //     optionInfo: {
-       //      key: 'itemTwo',
-       //      synonyms: ['thing two', 'object two']
-       //     },
-       //     title: 'Option Two Title'
-       //    }
-       //   ]
-       //  }
-       // }
       ]
      }
     }
-   }
+   ]
   })
  }
 }
-
-// fulfillmentMessages: [
-// {
-//  card: {
-//   title: 'Stats for: ',
-//   subtitle: res.data.name,
-//   imageUri: res.data.sprites.front_default,
-//   buttons: [
-//    {
-//     text: 'Check stats on Bulbapedia',
-//     postback: `https://bulbapedia.bulbagarden.net/wiki/${
-//      res.data.name
-//     }_(Pok%C3%A9mon)`
-//    }
-//   ]
-//  }
-// }
-// ]
