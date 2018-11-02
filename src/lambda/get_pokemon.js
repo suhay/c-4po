@@ -28,6 +28,28 @@ exports.handler = async (event, context) => {
        }
       ]
      }
+    },
+    {
+     carousel: {
+      items: [
+       {
+        title: '1',
+        description: 'here'
+       },
+       {
+        title: '1',
+        description: 'here'
+       },
+       {
+        title: '1',
+        description: 'here'
+       },
+       {
+        title: '1',
+        description: 'here'
+       }
+      ]
+     }
     }
    ]
   })
