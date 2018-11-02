@@ -14,50 +14,45 @@ exports.handler = async (event, context) => {
   statusCode: 200,
   body: JSON.stringify({
    payload: {
-    "google": {
-     "expectUserResponse": true,
-     "richResponse": {
+    google: {
+     expectUserResponse: true,
+     richResponse: {
       items: [
        {
-        "carouselBrowse": {
-         "items": [
+        carouselBrowse: {
+         items: [
           {
-            "description": "Option One Description",
-            "image": {
-              "url": "http://imageOneUrl.com",
-              "accessibilityText": "Image description for screen readers"
-            },
-            "optionInfo": {
-              "key": "itemOne",
-              "synonyms": [
-                "thing one",
-                "object one"
-              ]
-            },
-            "title": "Option One Title"
+           description: 'Option One Description',
+           image: {
+            url: 'http://imageOneUrl.com',
+            accessibilityText: 'Image description for screen readers'
+           },
+           optionInfo: {
+            key: 'itemOne',
+            synonyms: ['thing one', 'object one']
+           },
+           title: 'Option One Title'
           },
           {
-            "description": "Option Two Description",
-            "image": {
-              "url": "http://imageTwoUrl.com",
-              "accessibilityText": "Image description for screen readers"
-            },
-            "optionInfo": {
-              "key": "itemTwo",
-              "synonyms": [
-                "thing two",
-                "object two"
-              ]
-            },
-            "title": "Option Two Title"
+           description: 'Option Two Description',
+           image: {
+            url: 'http://imageTwoUrl.com',
+            accessibilityText: 'Image description for screen readers'
+           },
+           optionInfo: {
+            key: 'itemTwo',
+            synonyms: ['thing two', 'object two']
+           },
+           title: 'Option Two Title'
           }
-        ],
+         ]
         }
        }
       ]
      }
     }
    }
+  })
  }
 }
 
