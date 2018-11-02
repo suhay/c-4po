@@ -15,11 +15,15 @@ exports.handler = async (event, context) => {
 	return {
 		statusCode: 200,
 		body: JSON.stringify({
-			slack: {
-				imageUrl: res.data.data.embed_url,
-				title: "I don't understand...",
-				subtitle: "Random image from Giphy"
-			}
+			"fulfillmentMessages": [
+				{
+					"card": {
+						"title": "I don't understand...",
+						"subtitle": "Random image from Giphy",
+						"imageUri": res.data.data.embed_url,
+					}
+				}
+			],
 		})
 	}
 }
