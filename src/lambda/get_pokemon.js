@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
   body: JSON.stringify({
    fulfillmentMessages: [
     {
-     text: `${pokemon} caught!`,
+     title: `${pokemon} caught!`,
      card: {
       title: 'Stats for: ',
       subtitle: res.data.name,
