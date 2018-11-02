@@ -3,6 +3,7 @@ require('dotenv').config()
 
 exports.handler = async (event, context) => {
 	console.log(process.env.GIPHY_API)
+	
 	const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_API}&rating=pg-13&fmt=json`
 	const res = await axios({
 		method: 'GET',
