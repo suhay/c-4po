@@ -15,10 +15,15 @@ exports.handler = async (event, context) => {
   body: JSON.stringify({
    fulfillmentMessages: [
     {
+     image: {
+      imageUri: res.data.sprites.front_default
+     }
+    },
+    {
      card: {
       title: 'Stats for: ',
       subtitle: res.data.name,
-      imageUri: res.data.sprites.front_default,
+      imageUri: res.data.sprites.back_default,
       buttons: [
        {
         text: 'Check stats on Bulbapedia',
@@ -30,10 +35,12 @@ exports.handler = async (event, context) => {
      }
     },
     {
-     image: {
-      imageUri: res.data.sprites.back_default
+     text: {
+      messages: [
+       `hello`
+      ]
      }
-    },
+    }
     {
      carouselSelect: {
       items: res.data.moves.map(m => ({
@@ -41,13 +48,13 @@ exports.handler = async (event, context) => {
         key: `name`
        },
        title: m.move.name,
-       description: m.version_group_details[0].level_learned_at
+       description: `Learned at ${m.version_group_details[0].level_learned_at}`
       }))
      }
     },
     {
      payload: {
-      google: {
+      slack: {
        expectUserResponse: true,
        richResponse: {
         items: [
