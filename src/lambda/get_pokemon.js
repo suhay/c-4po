@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
       items: [
        {
         simpleResponse: {
-         textToSpeech: 'this is a simple response'
+         displayText: 'this is a simple response'
         }
        }
        // {
