@@ -14,39 +14,47 @@ exports.handler = async (event, context) => {
   statusCode: 200,
   body: JSON.stringify({
    fulfillmentMessages: [
-    {
-     card: {
-      title: 'Stats for: ',
-      subtitle: res.data.name,
-      imageUri: res.data.sprites.front_default,
-      buttons: [
-       {
-        text: 'Check stats on Bulbapedia',
-        postback: `https://bulbapedia.bulbagarden.net/wiki/${
-         res.data.name
-        }_(Pok%C3%A9mon)`
-       }
-      ]
-     }
-    },
+    // {
+    //  card: {
+    //   title: res.data.name,
+    //   subtitle: 'stats',
+    //   imageUri: res.data.sprites.front_default,
+    //   buttons: [
+    //    {
+    //     text: 'Check stats on Bulbapedia',
+    //     postback: `https://bulbapedia.bulbagarden.net/wiki/${
+    //      res.data.name
+    //     }_(Pok%C3%A9mon)`
+    //    }
+    //   ]
+    //  }
+    // },
     {
      carouselSelect: {
       items: [
        {
         title: '1',
-        description: 'here'
+        description: 'here',
+        image: {
+         imageUri: res.data.sprites.front_default,
+         accessibilityText: `pokemon`
+        }
        },
        {
         title: '1',
-        description: 'here'
+        description: 'here',
+        image: {
+         imageUri: res.data.sprites.front_default,
+         accessibilityText: `pokemon`
+        }
        },
        {
         title: '1',
-        description: 'here'
-       },
-       {
-        title: '1',
-        description: 'here'
+        description: 'here',
+        image: {
+         imageUri: res.data.sprites.front_default,
+         accessibilityText: `pokemon`
+        }
        }
       ]
      }
