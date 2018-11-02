@@ -31,34 +31,38 @@ exports.handler = async (event, context) => {
     // },
     google: {
      richResponses: {
-      carouselBrowse: {
-       items: [
-        {
-         title: '1',
-         description: 'here',
-         image: {
-          imageUri: res.data.sprites.front_default,
-          accessibilityText: `pokemon`
-         }
-        },
-        {
-         title: '1',
-         description: 'here',
-         image: {
-          imageUri: res.data.sprites.front_default,
-          accessibilityText: `pokemon`
-         }
-        },
-        {
-         title: '1',
-         description: 'here',
-         image: {
-          imageUri: res.data.sprites.front_default,
-          accessibilityText: `pokemon`
-         }
+      items: [
+       {
+        carouselBrowse: {
+         items: [
+          {
+           title: '1',
+           description: 'here',
+           image: {
+            imageUri: res.data.sprites.front_default,
+            accessibilityText: `pokemon`
+           }
+          },
+          {
+           title: '1',
+           description: 'here',
+           image: {
+            imageUri: res.data.sprites.front_default,
+            accessibilityText: `pokemon`
+           }
+          },
+          {
+           title: '1',
+           description: 'here',
+           image: {
+            imageUri: res.data.sprites.front_default,
+            accessibilityText: `pokemon`
+           }
+          }
+         ]
         }
-       ]
-      }
+       }
+      ]
      }
     }
    }
