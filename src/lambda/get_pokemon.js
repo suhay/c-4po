@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
      }
     },
     {
-     carousel: {
+     carouselSelect: {
       items: [
        {
         title: '1',
