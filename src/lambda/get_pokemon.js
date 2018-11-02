@@ -10,6 +10,8 @@ exports.handler = async (event, context) => {
  })
 
  console.log(Object.keys(res.data))
+ const height = `${res.data.height * 0.328084} feet`
+ const weight = `${res.data.weight * 0.220462} pounds`
  return {
   statusCode: 200,
   body: JSON.stringify({
@@ -21,8 +23,8 @@ exports.handler = async (event, context) => {
     },
     {
      card: {
-      title: 'Stats for: ',
-      subtitle: res.data.name,
+      title: `${res.data.name}`,
+      subtitle: `${height} and ${weight}`,
       imageUri: res.data.sprites.back_default,
       buttons: [
        {
@@ -35,57 +37,9 @@ exports.handler = async (event, context) => {
      }
     },
     {
-     text: {
-      messages: [
-       `hello`
-      ]
-     }
-    }
-    {
-     carouselSelect: {
-      items: res.data.moves.map(m => ({
-       info: {
-        key: `name`
-       },
-       title: m.move.name,
-       description: `Learned at ${m.version_group_details[0].level_learned_at}`
-      }))
-     }
-    },
-    {
-     payload: {
-      slack: {
-       expectUserResponse: true,
-       richResponse: {
-        items: [
-         {
-          simpleResponse: {
-           textToSpeech: 'this is a simple response',
-           displayText: 'string here'
-          }
-         }
-        ]
-       }
-      }
-     }
+     text: ['text response']
     }
    ]
   })
  }
 }
-
-// {
-//  card: {
-//   title: res.data.name,
-//   subtitle: 'stats',
-//   imageUri: res.data.sprites.front_default,
-//   buttons: [
-//    {
-//     text: 'Check stats on Bulbapedia',
-//     postback: `https://bulbapedia.bulbagarden.net/wiki/${
-//      res.data.name
-//     }_(Pok%C3%A9mon)`
-//    }
-//   ]
-//  }
-// },
