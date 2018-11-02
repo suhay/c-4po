@@ -13,18 +13,18 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   fulfillmentText: 'This is a text response',
    fulfillmentMessages: [
     {
      card: {
-      title: 'card title',
-      subtitle: 'card text',
-      imageUri:
-       'https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png',
+      title: 'Stats for: ',
+      subtitle: res.data.name,
+      imageUri: res.data.sprites.front_default,
       buttons: [
        {
-        text: 'button text',
-        postback: 'https://assistant.google.com/'
+        text: 'Check stats on Bulbapedia',
+        postback: `https://bulbapedia.bulbagarden.net/wiki/${
+         res.data.name
+        }_(Pok%C3%A9mon)`
        }
       ]
      }
@@ -32,6 +32,23 @@ exports.handler = async (event, context) => {
     {
      image: {
       imageUri: `https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png`
+     }
+    },
+    {
+     payload: {
+      google: {
+       expectUserResponse: true,
+       richResponse: {
+        items: [
+         {
+          simpleResponse: {
+           textToSpeech: 'this is a simple response',
+           displayText: 'string here'
+          }
+         }
+        ]
+       }
+      }
      }
     }
    ]
