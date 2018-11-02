@@ -13,23 +13,23 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   fulfillmentText: 'This is a text response'
-   // fulfillmentMessages: [
-   //  {
-   //   card: {
-   //    title: 'card title',
-   //    subtitle: 'card text',
-   //    imageUri:
-   //     'https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png',
-   //    buttons: [
-   //     {
-   //      text: 'button text',
-   //      postback: 'https://assistant.google.com/'
-   //     }
-   //    ]
-   //   }
-   //  }
-   // ],
+   fulfillmentText: 'This is a text response',
+   fulfillmentMessages: [
+    {
+     card: {
+      title: 'card title',
+      subtitle: 'card text',
+      imageUri:
+       'https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png',
+      buttons: [
+       {
+        text: 'button text',
+        postback: 'https://assistant.google.com/'
+       }
+      ]
+     }
+    }
+   ]
    // payload: {
    //  google: {
    //   expectUserResponse: true,
