@@ -29,27 +29,28 @@ exports.handler = async (event, context) => {
       ]
      }
     }
-   ]
-   // payload: {
-   //  google: {
-   //   expectUserResponse: true,
-   //   richResponse: {
-   //    items: [
-   //     {
-   //      simpleResponse: {
-   //       textToSpeech: 'this is a simple response'
-   //      }
-   //     }
-   //    ]
-   //   }
-   //  },
-   //  facebook: {
-   //   text: 'Hello, Facebook!'
-   //  },
-   //  slack: {
-   //   text: 'This is a text response for Slack.'
-   //  }
-   // }
+   ],
+   payload: {
+    google: {
+     expectUserResponse: true,
+     richResponse: {
+      items: [
+       {
+        simpleResponse: {
+         displayText: 'hello',
+         textToSpeech: 'this is a simple response'
+        }
+       }
+      ]
+     }
+    },
+    facebook: {
+     text: 'Hello, Facebook!'
+    },
+    slack: {
+     text: 'This is a text response for Slack.'
+    }
+   }
   })
  }
 }
