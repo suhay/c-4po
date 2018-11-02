@@ -13,11 +13,12 @@ exports.handler = async (event, context) => {
   return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
  }
 
- const pokemon = getRandomIntInclusive(1, res.data.count)
+ const pokemon = getRandomIntInclusive(0, res.data.count - 1)
+
  console.log(pokemon)
  const pokemonRes = await axios({
   method: `GET`,
-  url: `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+  url: res.data.results[pokemon].url
  })
 
  return {
