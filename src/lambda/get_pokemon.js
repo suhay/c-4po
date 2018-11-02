@@ -10,8 +10,8 @@ exports.handler = async (event, context) => {
  })
 
  console.log(Object.keys(res.data))
- const height = `${res.data.height * 0.328084} feet`
- const weight = `${res.data.weight * 0.220462} pounds`
+ const height = `${(res.data.height * 0.328084).toFixed(2)} feet`
+ const weight = `${(res.data.weight * 0.220462).toFixed(2)} pounds`
  return {
   statusCode: 200,
   body: JSON.stringify({
