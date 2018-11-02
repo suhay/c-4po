@@ -35,9 +35,6 @@ exports.handler = async (event, context) => {
        }
       ]
      }
-    },
-    {
-     text: ['text response']
     }
    ]
   })
