@@ -1,5 +1,4 @@
 const axios = require('axios')
-const querystring = require('querystring')
 require('dotenv').config()
 
 exports.handler = async (event, context) => {
@@ -16,7 +15,11 @@ exports.handler = async (event, context) => {
 	return {
 		statusCode: 200,
 		body: JSON.stringify({
-			fulfillmentText: `${res.data.data.embed_url}`
+			slack: {
+				imageUrl: res.data.data.embed_url,
+				title: "I don't understand...",
+				subtitle: "Random image from Giphy"
+			}
 		})
 	}
 }
