@@ -35,6 +35,17 @@ exports.handler = async (event, context) => {
      }
     },
     {
+     carouselSelect: {
+      items: res.data.moves.map(m => ({
+       info: {
+        key: `name`
+       },
+       title: m.move.name,
+       description: m.version_group_details[0].level_learned_at
+      }))
+     }
+    },
+    {
      payload: {
       google: {
        expectUserResponse: true,
