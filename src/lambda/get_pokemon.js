@@ -13,7 +13,24 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   fulfillmentText: `${pokemon} caught!`
+   fulfillmentText: `${pokemon} caught!`,
+   fulfillmentMessages: [
+    {
+     card: {
+      title: 'Stats for: ',
+      subtitle: res.data.name,
+      imageUri: res.data.sprites.front_default,
+      buttons: [
+       {
+        text: 'Bulbapedia',
+        postback: `https://bulbapedia.bulbagarden.net/wiki/${
+         res.data.name
+        }_(Pok%C3%A9mon)`
+       }
+      ]
+     }
+    }
+   ]
   })
  }
 }
