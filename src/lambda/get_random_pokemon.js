@@ -7,8 +7,13 @@ exports.handler = async (event, context) => {
   method: 'GET',
   url
  })
+ const getRandomIntInclusive = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
+ }
 
- const pokemon = Math.random() * (res.data.count - 1) + 1
+ const pokemon = getRandomIntInclusive(1, res.data.count)
  console.log(pokemon)
  const pokemonRes = await axios({
   method: `GET`,
