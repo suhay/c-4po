@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
  return {
   statusCode: 200,
   body: JSON.stringify({
-   fulfillmentMessages: [
+   payload: {
     // {
     //  card: {
     //   title: res.data.name,
@@ -29,37 +29,39 @@ exports.handler = async (event, context) => {
     //   ]
     //  }
     // },
-    {
-     carouselBrowse: {
-      items: [
-       {
-        title: '1',
-        description: 'here',
-        image: {
-         imageUri: res.data.sprites.front_default,
-         accessibilityText: `pokemon`
+    google: {
+     richResponses: {
+      carouselBrowse: {
+       items: [
+        {
+         title: '1',
+         description: 'here',
+         image: {
+          imageUri: res.data.sprites.front_default,
+          accessibilityText: `pokemon`
+         }
+        },
+        {
+         title: '1',
+         description: 'here',
+         image: {
+          imageUri: res.data.sprites.front_default,
+          accessibilityText: `pokemon`
+         }
+        },
+        {
+         title: '1',
+         description: 'here',
+         image: {
+          imageUri: res.data.sprites.front_default,
+          accessibilityText: `pokemon`
+         }
         }
-       },
-       {
-        title: '1',
-        description: 'here',
-        image: {
-         imageUri: res.data.sprites.front_default,
-         accessibilityText: `pokemon`
-        }
-       },
-       {
-        title: '1',
-        description: 'here',
-        image: {
-         imageUri: res.data.sprites.front_default,
-         accessibilityText: `pokemon`
-        }
-       }
-      ]
+       ]
+      }
      }
     }
-   ]
+   }
   })
  }
 }
