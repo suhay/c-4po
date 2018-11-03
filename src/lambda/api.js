@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
  if (params.token && params.challenge && params.token === process.env.SLACK_TOKEN) {
   return {
     statusCode: 200,
-    body: process.env.SLACK_TOKEN
+    body: params.challenge
   }
  }
 
